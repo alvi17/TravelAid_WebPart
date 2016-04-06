@@ -1,0 +1,32 @@
+BusService : BRTC
+
+Stopage: 
+        	Narayangonj 23.617219, 90.499975 
+		Fatulla     23.638845, 90.480072
+		SignBoard  23.694894, 90.466844
+		SonirAkra  23.707625, 90.452424
+		Jatrabari  23.709669, 90.439035
+		Sayedabad  23.716034, 90.427147
+		Komolapur  23.722085, 90.428692 
+		Gulistan   23.724167, 90.410496
+		
+		
+		
+BusService : TA/AT Bus Service
+
+Stopage:
+Kachpur 	23.706075, 90.521939
+SonirAkra	23.707625, 90.452424
+Jatrabari	23.709669, 90.439035
+Sayedabad	23.716034, 90.427147
+Komolapur	23.722085, 90.428692 
+Motijheel	23.726726  90.421226
+Shahbag		23.739249, 90.395830
+Farmgate	23.757401, 90.390005
+Uttora		23.879616, 90.392450
+Tongi		23.898970, 90.408844
+		
+Insert Into Stopage(Name,Lattitude,Longitude) Values("Shahbag","23.739249","90.395830");
+Insert Into Stopage(Name,Lattitude,Longitude) Values("Farmgate","23.757401","90.390005");
+Insert Into Stopage(Name,Lattitude,Longitude) Values("Uttora","23.879616","90.392450");
+Insert Into Stopage(Name,Lattitude,Longitude) Values("Tongi","23.898970","90.408844");

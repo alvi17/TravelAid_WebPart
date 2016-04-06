@@ -1,0 +1,95 @@
+
+old: 9xbqPyTYxNQwDvgc
+
+new: SHO0XyjQyMQnNlrz
+travelaid.net78.net
+a1424875
+alvi1005017
+ 
+
+$mysql_host = "mysql2.000webhost.com";
+$mysql_database = "a1424875_travel";
+$mysql_user = "a1424875_alvi";
+$mysql_password = "travel1729aid";
+
+CREATE TABLE BusService(
+Id char(20) PRIMARY KEY,
+Name varchar(80)
+)
+
+CREATE TABLE Stopage(
+Id char(20) PRIMARY KEY,
+Name varchar(80),
+Lattitude varchar(30),
+Longitude varchar(30)
+);
+CREATE TABLE BusStopage(
+ BusServiceId char(20),
+StopageId char(20), 
+FOREIGN KEY (BusServiceId) REFERENCES BusService(Id),
+FOREIGN KEY (StopageId) REFERENCES Stopage(Id)
+)
+
+CREATE TABLE Route
+(
+Id char(20) PRIMARY KEY,
+StartingLocation varchar(80),
+FinishLocation varchar(80)
+)
+
+CREATE TABLE BusRoute(
+ RouteId char(20),
+ BusServiceId char(20),
+ FOREIGN KEY (RouteId) REFERENCES Route(Id),
+ FOREIGN KEY (BusServiceId) REFERENCES BusService(Id)
+)
+CREATE TABLE Bus(
+Id char(20) PRIMARY KEY,
+IMEI char(30)
+)
+
+CREATE TABLE BusOwner(
+BusServiceId char(20),
+BusId char(20),
+FOREIGN KEY (BusServiceId) REFERENCES BusService(Id),
+FOREIGN KEY (BusId) REFERENCES Bus(Id)
+)
+
+CREATE TABLE Location(
+ Id char(20),
+ Lattitude varchar(50),
+ Longitude varchar(50)
+)
+CREATE TABLE BusLocation(
+ LocationId char(20),
+ BusId char(20),
+ FOREIGN KEY (LocationId) REFERENCES Location(Id),
+ FOREIGN KEY (BusId) REFERENCES Bus(ID)
+
+)
+
+CREATE TABLE User_Table(
+Id char(50) PRIMARY KEY,
+Password varchar(30) NOT NULL
+)
+CREATE TABLE User_Travel(
+ UserId char(50),
+ BusId char(20),
+ FOREIGN KEY (UserId) REFERENCES User_Table(Id),
+ FOREIGN KEY (BusId) REFERENCES Bus(Id)
+)
+
+
+
+
+INSERT INTO User_Table values("user","123")
+INSERT INTO USer_Table values("user1","1234")
+INSERT INTO User_Table values("admin","admin")
+
+INSERT INTO BusService values("1000","BRTC");
+INSERT INTO BusService values("1001","BRTC");
+INSERT INTO BusService values("1002","Badhon");
+
+INSERT INTO Stopage Values("20000","Motijheel","23.726726","90.421226")
+INSERT INTO Stopage Values("20000","Daynik Bangla More","23.730184","90.415303");
+INSERT INTO Stopage Values("20000","Kakrail","23.737648","90.408093")
